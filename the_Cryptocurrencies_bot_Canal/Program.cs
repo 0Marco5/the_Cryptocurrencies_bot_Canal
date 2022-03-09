@@ -19,7 +19,7 @@ namespace the_Cryptocurrencies_bot
 
             var me = await botClient.GetMeAsync();
 
-            await EnviarMensaje(979336598);
+            await EnviarMensaje();
 
            
         }
@@ -209,10 +209,10 @@ namespace the_Cryptocurrencies_bot
             public Ticker Data { get; set; }
         }
 
-        public static async Task EnviarMensaje(long chatID)
+        public static async Task EnviarMensaje()
         {
             var botClient = new TelegramBotClient("5138490742:AAFK7ZVo8CDaggoCYWc716c1llfqnJCx0zk");
-            var chatId = chatID;
+            var chatId = "@CryptosWorldTrading";
             Message message = await botClient.SendTextMessageAsync(
                 chatId: chatId,
                 text:

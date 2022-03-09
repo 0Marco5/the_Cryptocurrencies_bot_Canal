@@ -1,0 +1,8 @@
+C:\the_Cryptocurrencies_bot\the_Cryptocurrencies_bot_Canal\the_Cryptocurrencies_bot_Canal\bin\Release\net6.0\publish\72.167.51.214\the_Cryptocurrencies_bot_Canal.exe
+C:\the_Cryptocurrencies_bot\the_Cryptocurrencies_bot_Canal\the_Cryptocurrencies_bot_Canal\bin\Release\net6.0\publish\72.167.51.214\the_Cryptocurrencies_bot_Canal.dll
+C:\the_Cryptocurrencies_bot\the_Cryptocurrencies_bot_Canal\the_Cryptocurrencies_bot_Canal\bin\Release\net6.0\publish\72.167.51.214\the_Cryptocurrencies_bot_Canal.deps.json
+C:\the_Cryptocurrencies_bot\the_Cryptocurrencies_bot_Canal\the_Cryptocurrencies_bot_Canal\bin\Release\net6.0\publish\72.167.51.214\the_Cryptocurrencies_bot_Canal.runtimeconfig.json
+C:\the_Cryptocurrencies_bot\the_Cryptocurrencies_bot_Canal\the_Cryptocurrencies_bot_Canal\bin\Release\net6.0\publish\72.167.51.214\the_Cryptocurrencies_bot_Canal.pdb
+C:\the_Cryptocurrencies_bot\the_Cryptocurrencies_bot_Canal\the_Cryptocurrencies_bot_Canal\bin\Release\net6.0\publish\72.167.51.214\Newtonsoft.Json.dll
+C:\the_Cryptocurrencies_bot\the_Cryptocurrencies_bot_Canal\the_Cryptocurrencies_bot_Canal\bin\Release\net6.0\publish\72.167.51.214\Telegram.Bot.dll
+C:\the_Cryptocurrencies_bot\the_Cryptocurrencies_bot_Canal\the_Cryptocurrencies_bot_Canal\bin\Release\net6.0\publish\72.167.51.214\Telegram.Bot.Extensions.Polling.dll

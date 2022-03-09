@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "UU0cYElqOW/8plNdfgDZ6MlqXI054UR2YxUDYIXUcy6xBZ63KrHCf3X/P8/8JbD2/wUgPTqEgr0FGsfOOkeMpw==",
+  "success": true,
+  "projectFilePath": "C:\\the_Cryptocurrencies_bot\\the_Cryptocurrencies_bot_Canal\\the_Cryptocurrencies_bot_Canal\\the_Cryptocurrencies_bot_Canal.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alpiz\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\alpiz\\.nuget\\packages\\system.threading.channels\\6.0.0\\system.threading.channels.6.0.0.nupkg.sha512",
+    "C:\\Users\\alpiz\\.nuget\\packages\\telegram.bot\\17.0.0\\telegram.bot.17.0.0.nupkg.sha512",
+    "C:\\Users\\alpiz\\.nuget\\packages\\telegram.bot.extensions.polling\\1.0.2\\telegram.bot.extensions.polling.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

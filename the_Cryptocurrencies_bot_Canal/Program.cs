@@ -5,8 +5,8 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
 using Newtonsoft.Json;
-using Quartz;
-using Quartz.Impl;
+//using Quartz;
+//using Quartz.Impl;
 
 namespace the_Cryptocurrencies_bot
 {
@@ -73,30 +73,30 @@ namespace the_Cryptocurrencies_bot
         
     }
 
-    public class SimpleJob : IJob
-    {
-        async Task IJob.Execute(IJobExecutionContext context)
-        {
-            int a = 1;
-            Console.WriteLine($"{a}");
-            a++;
-            ConeccionAPI api = new ConeccionAPI();
-            var botClient = new TelegramBotClient("5138490742:AAFK7ZVo8CDaggoCYWc716c1llfqnJCx0zk");
-            var chatId = "@abcde123456789abcde123";
-            Message message = await botClient.SendTextMessageAsync(
-                chatId: chatId,
-                text:
-                $"Symbol = {await api.APISymbol()}\n" +
-                $"Price = {await api.APIPrice()}\n" +
-                $"Change 24h = {await api.APIChangeRate()}%\n" +
-                $"Low = {await api.APILow()}\n" +
-                $"High = {await api.APIHigh()}");
+    //public class SimpleJob : IJob
+    //{
+    //    async Task IJob.Execute(IJobExecutionContext context)
+    //    {
+    //        int a = 1;
+    //        Console.WriteLine($"{a}");
+    //        a++;
+    //        ConeccionAPI api = new ConeccionAPI();
+    //        var botClient = new TelegramBotClient("5138490742:AAFK7ZVo8CDaggoCYWc716c1llfqnJCx0zk");
+    //        var chatId = "@abcde123456789abcde123";
+    //        Message message = await botClient.SendTextMessageAsync(
+    //            chatId: chatId,
+    //            text:
+    //            $"Symbol = {await api.APISymbol()}\n" +
+    //            $"Price = {await api.APIPrice()}\n" +
+    //            $"Change 24h = {await api.APIChangeRate()}%\n" +
+    //            $"Low = {await api.APILow()}\n" +
+    //            $"High = {await api.APIHigh()}");
 
 
-            //return Task.CompletedTask;
+    //        //return Task.CompletedTask;
 
-        }
-    }
+    //    }
+    //}
 
     public class ConeccionAPI
     {

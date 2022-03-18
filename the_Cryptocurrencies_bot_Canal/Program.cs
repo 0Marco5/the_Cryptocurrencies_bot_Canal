@@ -16,11 +16,11 @@ namespace the_Cryptocurrencies_bot
         {
             ConeccionAPI api = new ConeccionAPI();
             var botClient = new TelegramBotClient("5138490742:AAFK7ZVo8CDaggoCYWc716c1llfqnJCx0zk");
-            var chatId = "@CryptosWorldTrading";
+            var chatId = "@abcde123456789abcde123";
             Message message = await botClient.SendTextMessageAsync(
                 chatId: chatId,
                 text:
-                $"Reporte de BTC en las ultimas 24h\n" +
+                $"BTC en las ultimas 24h\n" +
                 $"Symbol = {await api.APISymbol()}\n" +
                 $"Price = {await api.APIPrice()}\n" +
                 $"Change 24h = {await api.APIChangeRate()}%\n" +

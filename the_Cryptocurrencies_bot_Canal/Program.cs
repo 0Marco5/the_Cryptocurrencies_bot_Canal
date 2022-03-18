@@ -5,26 +5,102 @@ using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 
 using Newtonsoft.Json;
+using Quartz;
+using Quartz.Impl;
 
 namespace the_Cryptocurrencies_bot
 {
     public class API
     {
-
         static async Task Main(string[] args)
         {
+            ConeccionAPI api = new ConeccionAPI();
             var botClient = new TelegramBotClient("5138490742:AAFK7ZVo8CDaggoCYWc716c1llfqnJCx0zk");
+            var chatId = "@abcde123456789abcde123";
+            Message message = await botClient.SendTextMessageAsync(
+                chatId: chatId,
+                text:
+                $"Symbol = {await api.APISymbol()}\n" +
+                $"Price = {await api.APIPrice()}\n" +
+                $"Change 24h = {await api.APIChangeRate()}%\n" +
+                $"Low = {await api.APILow()}\n" +
+                $"High = {await api.APIHigh()}");
+            //bool a = false;
+            //while (a == false)
+            //{
+            //    DateTime dateTime = DateTime.Now; ;
+            //    if (dateTime.Hour == 20)
+            //    {
+            //        a = true;
+            //    }
+            //    if (a == true && dateTime.Minute == 05)
+            //    {
+            //        a = true;
+            //    }
+            //    else
+            //    {
+            //        a = false;
+            //    }
+            //}
+            //    // 1. Create a scheduler Factory
+            //    ISchedulerFactory schedulerFactory = new StdSchedulerFactory();
+            //    // 2. Get and start a scheduler
+            //    IScheduler scheduler = await schedulerFactory.GetScheduler();
+            //    await scheduler.Start();
+            //    // 3. Create a job
+            //    IJobDetail job = JobBuilder.Create<SimpleJob>()
+            //            .WithIdentity("number generator job", "number generator group")
+            //            .Build();
+            //    // 4. Create a trigger
+            //    ITrigger trigger = TriggerBuilder.Create()
+            //        .WithIdentity("number generator trigger", "number generator group")
+            //        .WithSimpleSchedule(x => x.WithIntervalInSeconds(10).RepeatForever())
+            //        .Build();
+            //    // 5. Schedule the job using the job and trigger 
+            //    await scheduler.ScheduleJob(job, trigger);
+            //    Console.ReadLine();
+            //var botClient = new TelegramBotClient("5138490742:AAFK7ZVo8CDaggoCYWc716c1llfqnJCx0zk");
 
-            
 
-            var me = await botClient.GetMeAsync();
 
-            await EnviarMensaje();
+            //var me = await botClient.GetMeAsync();
 
-           
+            //await EnviarMensaje();
         }
 
-        public static async Task<string> APISymbol()
+        
+
+        
+    }
+
+    public class SimpleJob : IJob
+    {
+        async Task IJob.Execute(IJobExecutionContext context)
+        {
+            int a = 1;
+            Console.WriteLine($"{a}");
+            a++;
+            ConeccionAPI api = new ConeccionAPI();
+            var botClient = new TelegramBotClient("5138490742:AAFK7ZVo8CDaggoCYWc716c1llfqnJCx0zk");
+            var chatId = "@abcde123456789abcde123";
+            Message message = await botClient.SendTextMessageAsync(
+                chatId: chatId,
+                text:
+                $"Symbol = {await api.APISymbol()}\n" +
+                $"Price = {await api.APIPrice()}\n" +
+                $"Change 24h = {await api.APIChangeRate()}%\n" +
+                $"Low = {await api.APILow()}\n" +
+                $"High = {await api.APIHigh()}");
+
+
+            //return Task.CompletedTask;
+
+        }
+    }
+
+    public class ConeccionAPI
+    {
+        public async Task<string> APISymbol()
         {
             var url = "https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT";
 
@@ -46,7 +122,7 @@ namespace the_Cryptocurrencies_bot
 
         }
 
-        public static async Task<string> APIPrice()
+        public async Task<string> APIPrice()
         {
             var url = "https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT";
 
@@ -68,7 +144,7 @@ namespace the_Cryptocurrencies_bot
 
         }
 
-        public static async Task<string> APIChangeRate()
+        public async Task<string> APIChangeRate()
         {
             var url = "https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT";
 
@@ -118,7 +194,7 @@ namespace the_Cryptocurrencies_bot
             return abc;
         }
 
-        public static async Task<string> APILow()
+        public async Task<string> APILow()
         {
             var url = "https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT";
 
@@ -140,7 +216,7 @@ namespace the_Cryptocurrencies_bot
 
         }
 
-        public static async Task<string> APIHigh()
+        public async Task<string> APIHigh()
         {
             var url = "https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT";
 
@@ -207,20 +283,6 @@ namespace the_Cryptocurrencies_bot
 
             [JsonProperty("data")]
             public Ticker Data { get; set; }
-        }
-
-        public static async Task EnviarMensaje()
-        {
-            var botClient = new TelegramBotClient("5138490742:AAFK7ZVo8CDaggoCYWc716c1llfqnJCx0zk");
-            var chatId = "@CryptosWorldTrading";
-            Message message = await botClient.SendTextMessageAsync(
-                chatId: chatId,
-                text:
-                $"Symbol = {await APISymbol()}\n" +
-                $"Price = {await APIPrice()}\n" +
-                $"Change 24h = {await APIChangeRate()}%\n" +
-                $"Low = {await APILow()}\n" +
-                $"High = {await APIHigh()}");
         }
     }
 }

@@ -20,6 +20,7 @@ namespace the_Cryptocurrencies_bot
             Message message = await botClient.SendTextMessageAsync(
                 chatId: chatId,
                 text:
+                $"Reporte de BTC en las ultimas 24h\n" +
                 $"Symbol = {await api.APISymbol()}\n" +
                 $"Price = {await api.APIPrice()}\n" +
                 $"Change 24h = {await api.APIChangeRate()}%\n" +
